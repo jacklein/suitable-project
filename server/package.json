@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate-mock-data": "node src/tooling/faker/generate",
-    "start": "json-server --watch src/api/db.json --port 3001 --routes src/api/routes.json"
+    "start": "json-server --host 192.168.1.137 --watch src/api/db.json --port 3001 --routes src/api/routes.json"
   },
   "repository": {
     "type": "git",

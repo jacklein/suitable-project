@@ -4,11 +4,11 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 import HomeScreen from './screens/HomeScreen';
-import AchievementScreen from './screens/AchievementScreen';
+import BadgeScreen from './screens/BadgeScreen';
 
 const AppNavigator = createStackNavigator({
   home: HomeScreen,
-  achievement: AchievementScreen
+  badge: BadgeScreen
 });
 
 const AppContainer = createAppContainer(AppNavigator);

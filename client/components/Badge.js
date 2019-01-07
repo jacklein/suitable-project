@@ -2,8 +2,8 @@ import React from 'react';
 import { Text } from 'react-native'
 import { Card, Button } from 'react-native-elements';
 
-const Achievement = ({ item, onPress }) => {
-  const { details } = item;
+const Badge = ({ badge, onPress }) => {
+  const { details } = badge;
   return (
     <Card
       title={details.title}
@@ -20,9 +20,9 @@ const Achievement = ({ item, onPress }) => {
         backgroundColor='#03A9F4'
         buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
         title='View Tasks'
-        onPress={() => onPress(item)} />
+        onPress={() => onPress(badge)} />
     </Card>
   );
 }
 
-export default Achievement;
+export default Badge;

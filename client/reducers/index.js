@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import achievements from './achievementsReducer';
+import badges from './badgesReducer';
 
 export default combineReducers({
-  achievements,
+  badges,
 });

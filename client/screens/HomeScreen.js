@@ -1,15 +1,14 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 import { StyleSheet, FlatList, Platform } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchAchievements } from '../actions';
+import { fetchBadges } from '../actions';
 
-import Achievement from '../components/Achievement';
+import Badge from '../components/Badge';
 
 class HomeScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: 'Achievements',
+      headerTitle: 'Badges',
       headerStyle: {
         marginTop: Platform.OS === 'android' ? 24 : 0
       },
@@ -17,22 +16,22 @@ class HomeScreen extends Component {
   }
 
   async componentDidMount() {
-    this.props.fetchAchievements();
+    this.props.fetchBadges();
   }
 
-  onPress = item => {
+  onPress = badge => {
     this.props.navigation.navigate({
-      routeName: 'achievement',
+      routeName: 'badge',
       params: {
-        achievement: item
+        badge
       }
     });
   }
 
-  renderItem = ({ item }) => {
+  renderBadge = ({ item }) => {
     return (
-      <Achievement 
-        item={item} 
+      <Badge 
+        badge={item} 
         onPress={this.onPress} 
       />
     )
@@ -41,16 +40,16 @@ class HomeScreen extends Component {
   render() {
     return (
       <FlatList
-        data={this.props.achievements}
-        keyExtractor={item => item.id}
-        renderItem={this.renderItem}
+        data={this.props.badges}
+        keyExtractor={badge => badge.id}
+        renderItem={this.renderBadge}
       />
     );
   }
 }
 
-function mapStateToProps({ achievements }) {
-  return { achievements };
+function mapStateToProps({ badges }) {
+  return { badges };
 }
 
-export default connect(mapStateToProps, { fetchAchievements })(HomeScreen);
+export default connect(mapStateToProps, { fetchBadges })(HomeScreen);

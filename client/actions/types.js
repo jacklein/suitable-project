@@ -1,2 +1,2 @@
-// achievement actions
-export const FETCH_ACHIEVEMENTS = 'fetch_achievements';
+// badge actions
+export const FETCH_BADGES = 'fetch_badges';

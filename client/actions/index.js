@@ -1,1 +1,1 @@
-export * from './achievementActions';
+export * from './badgeActions';

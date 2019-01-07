@@ -1,9 +1,12 @@
-import React from 'react';
-import { StyleSheet, Text, FlatList, Platform } from 'react-native';
 import axios from 'axios';
-import { Card, Button } from 'react-native-elements';
+import React, { Component } from 'react';
+import { StyleSheet, FlatList, Platform } from 'react-native';
+import { connect } from 'react-redux';
+import { fetchAchievements } from '../actions';
 
-export default class HomeScreen extends React.Component {
+import Achievement from '../components/Achievement';
+
+class HomeScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: 'Achievements',
@@ -13,11 +16,8 @@ export default class HomeScreen extends React.Component {
     }
   }
 
-  state = { achievements: [] };
-
   async componentDidMount() {
-    const res = await axios.get('http://192.168.1.137:3001/v1/achievements');
-    this.setState({ achievements: res.data });
+    this.props.fetchAchievements();
   }
 
   onPress = item => {
@@ -30,32 +30,18 @@ export default class HomeScreen extends React.Component {
   }
 
   renderItem = ({ item }) => {
-    const { details } = item;
     return (
-      <Card
-        title={details.title}
-        image={{ uri: details.iconUrl }}
-      >
-        <Text style={{ textAlign: 'center', marginBottom: 10 }}>
-          Progress: {details.progress}
-        </Text>
-        <Text style={{marginBottom: 10}}>
-          {details.description}
-        </Text>
-        <Button
-          //icon={{name: 'code'}}
-          backgroundColor='#03A9F4'
-          buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-          title='View Tasks'
-          onPress={() => this.onPress(item)} />
-      </Card>
+      <Achievement 
+        item={item} 
+        onPress={this.onPress} 
+      />
     )
   }
 
   render() {
     return (
       <FlatList
-        data={this.state.achievements}
+        data={this.props.achievements}
         keyExtractor={item => item.id}
         renderItem={this.renderItem}
       />
@@ -63,11 +49,8 @@ export default class HomeScreen extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function mapStateToProps({ achievements }) {
+  return { achievements };
+}
+
+export default connect(mapStateToProps, { fetchAchievements })(HomeScreen);

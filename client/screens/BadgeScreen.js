@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Platform, FlatList } from 'react-native';
+import { View, Platform, FlatList } from 'react-native';
+import { connect } from 'react-redux';
+import { updateProgress } from '../actions';
 
 import Activity from '../components/Activity';
 
@@ -14,7 +16,7 @@ class BadgeScreen extends Component {
   }
 
   onPress = item => {
-    console.log(item);
+    this.props.updateProgress(item.id);
   }
 
   renderActivity = ({ item }) => {
@@ -38,4 +40,4 @@ class BadgeScreen extends Component {
   }
 }
 
-export default BadgeScreen;
+export default connect(null, { updateProgress })(BadgeScreen);

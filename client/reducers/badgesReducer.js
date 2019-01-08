@@ -9,7 +9,14 @@ export default function(state = [], action) {
     case FETCH_BADGES:
       return action.payload
     case UPDATE_PROGRESS:
-      return update(state, {[action.payload[0].achievementId]: {'details': {'progress': {$set: action.payload[0].progress}}}});
+      return state.map(badge => {
+        const updatedBadge = action.payload.find(el => el.achievementId === badge.id);
+        if (updatedBadge) {
+          return {...badge, details: { ...badge.details, progress: updatedBadge.progress }};
+        } else {
+          return badge;
+        }
+      });
     default:
       return state;
   }

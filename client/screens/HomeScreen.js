@@ -20,11 +20,18 @@ class HomeScreen extends Component {
     this.props.fetchBadges();
   }
 
+  shortenName = badge => {
+    const { title } = badge.details;
+    const lastIndex = title.lastIndexOf(' ');
+    return title.substring(0, lastIndex);
+  }
+
   onPress = badge => {
     this.props.navigation.navigate({
       routeName: 'badge',
       params: {
-        badge
+        badge,
+        title: this.shortenName(badge)
       }
     });
   }
@@ -38,19 +45,10 @@ class HomeScreen extends Component {
     )
   }
 
-  loadBadges = () => {
-    const badges = [];
-    for (const [key, value] of this.props.badges) {
-      badges.push(value);
-    }
-
-    return badges;
-  }
-
   render() {
     return (
       <FlatList
-        data={this.loadBadges()}  
+        data={this.props.badges}  
         keyExtractor={badge => badge.id}
         renderItem={this.renderBadge}
       />

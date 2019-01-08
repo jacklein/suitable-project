@@ -8,7 +8,7 @@ import Activity from '../components/Activity';
 class BadgeScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: navigation.state.params.badge.details.title,
+      headerTitle: navigation.state.params.title,
       headerStyle: {
         marginTop: Platform.OS === 'android' ? 24 : 0
       },

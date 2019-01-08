@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Platform, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { updateProgress } from '../actions';
+import Toast from 'react-native-easy-toast'
 
 import Activity from '../components/Activity';
 
@@ -15,8 +16,10 @@ class BadgeScreen extends Component {
     }
   }
 
-  onPress = item => {
-    this.props.updateProgress(item.id);
+  onPress = activity => {
+    this.props.updateProgress(activity.id, () => {
+      this.refs.toast.show(activity.details.title + ' Complete!');
+    });
   }
 
   renderActivity = ({ item }) => {
@@ -31,11 +34,16 @@ class BadgeScreen extends Component {
   render() {
     const activities = this.props.navigation.state.params.badge.relationships.recommendations;
     return (
-      <FlatList
-        data={activities}
-        keyExtractor={item => item.id}
-        renderItem={this.renderActivity}
-      />
+      <View>
+        <FlatList
+          data={activities}
+          keyExtractor={item => item.id}
+          renderItem={this.renderActivity}
+        />
+        <Toast 
+          ref="toast"
+        />
+      </View>
     )
   }
 }

@@ -2,7 +2,6 @@ import {
   FETCH_BADGES,
   UPDATE_PROGRESS
 } from '../actions/types';
-import update from 'immutability-helper';
 
 export default function(state = [], action) {
   switch(action.type) {

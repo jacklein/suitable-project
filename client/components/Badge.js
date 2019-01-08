@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, Image } from 'react-native'
 import { Card, Button } from 'react-native-elements';
+import { Bar } from 'react-native-progress';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -11,19 +12,23 @@ class Badge extends React.PureComponent {
       <View style={styles.container}>
         <Card
           title={details.title}
-          image={{ uri: details.iconUrl }}
-          imageProps={styles.image}
           containerStyle={styles.card}
+          wrapperStyle={{ alignItems: 'center' }}
         >
-          <Text style={{ textAlign: 'center', marginBottom: 10 }}>
-            Progress: {details.progress}
-          </Text>
+          <Bar 
+            progress={details.progress}
+            height={15}
+          />
+          <Image
+            style={styles.image}
+            source={{ uri: details.iconUrl }}
+          />
           <Text style={{marginBottom: 10}}>
             {details.description}
           </Text>
           <Button
             backgroundColor='#03A9F4'
-            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+            buttonStyle={styles.button}
             title='View Tasks'
             onPress={() => this.props.onPress(this.props.badge)}
           />
@@ -35,7 +40,6 @@ class Badge extends React.PureComponent {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center'
   },
   card: {
@@ -44,7 +48,12 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   image: {
-    resizeMode: 'contain'
+    resizeMode: 'center',
+    width: SCREEN_WIDTH,
+    height: 150
+  },
+  button: {
+    borderRadius: 0
   }
 });
 

@@ -2,32 +2,37 @@ import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native'
 import { Card, Button } from 'react-native-elements';
 import { Bar } from 'react-native-progress';
+import { primaryColor } from '../styles/common';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 class Badge extends React.PureComponent {
-  render(){
+  render() {
     const { details } = this.props.badge;
     return (
       <View style={styles.container}>
-        <Card
-          title={details.title}
-          containerStyle={styles.card}
-          wrapperStyle={{ alignItems: 'center' }}
-        >
-          <Bar 
-            progress={details.progress}
-            height={15}
-          />
-          <Image
-            style={styles.image}
-            source={{ uri: details.iconUrl }}
-          />
-          <Text style={{marginBottom: 10}}>
+        <Card containerStyle={styles.card} >
+          <View style={{ flexDirection: 'row' }}>
+            <Image
+              style={styles.image}
+              source={{ uri: details.iconUrl }}
+            />
+            <View style={{ flex: 1, marginTop: 10 }}>
+              <Text style={styles.title}>
+                {details.title}
+              </Text>
+              <Bar 
+                progress={details.progress}
+                color={primaryColor}
+                height={15}
+              />
+            </View>
+          </View>
+          <Text style={styles.description}>
             {details.description}
           </Text>
           <Button
-            backgroundColor='#03A9F4'
+            backgroundColor={primaryColor}
             buttonStyle={styles.button}
             title='View Tasks'
             onPress={() => this.props.onPress(this.props.badge)}
@@ -43,17 +48,28 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   card: {
+    borderWidth: 0,
     width: SCREEN_WIDTH, 
     marginTop: 0, 
     marginBottom: 10
   },
   image: {
-    resizeMode: 'center',
-    width: SCREEN_WIDTH,
-    height: 150
+    left: -15,
+    resizeMode: 'contain',
+    width: 100,
+    height: 100
+  },
+  title: {
+    marginBottom: 10,
+    fontWeight: 'bold'
+  },
+  description: {
+    marginBottom: 20, 
+    marginTop: 15
   },
   button: {
-    borderRadius: 0
+    borderRadius: 0,
+    alignSelf: 'center'
   }
 });
 

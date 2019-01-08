@@ -1,20 +1,23 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native'
 import { Card, Button } from 'react-native-elements';
+import { primaryColor } from '../styles/common';
 
 const Activity = ({ activity, onPress }) => {
   const { details } = activity;
   return (
-    <Card
-      title={details.title}
-    >
-      <Text style={{marginBottom: 10}}>
+    <Card containerStyle={styles.card} >
+      <Text style={styles.title}>
+        {details.title}
+      </Text>
+      <Text style={styles.description}>
         {details.description}
       </Text>
       <Button
-        backgroundColor='#03A9F4'
+        icon={{ name:'check', color:'#ffffff' }}
+        backgroundColor={primaryColor}
         buttonStyle={styles.button}
-        title='Mark Task Complete'
+        title='Mark Complete'
         onPress={() => onPress(activity)}
       />
     </Card>
@@ -22,11 +25,22 @@ const Activity = ({ activity, onPress }) => {
 }
 
 const styles = StyleSheet.create({
+  card: {
+    borderWidth: 0,
+    marginTop: 0, 
+    marginBottom: 10
+  },
+  title: {
+    textAlign: 'center',
+    fontWeight: 'bold', 
+    marginBottom: 15
+  },
+  description: {
+    marginBottom: 20
+  },
   button: {
     borderRadius: 0,
-    marginLeft: 0, 
-    marginRight: 0, 
-    marginBottom: 0
+    alignSelf: 'center'
   }
 });
 

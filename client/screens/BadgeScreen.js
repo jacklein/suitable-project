@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { View, Platform, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { updateProgress } from '../actions';
-import Toast from 'react-native-easy-toast'
+import Toast from 'react-native-easy-toast';
+import { secondaryColor } from '../styles/common';
 
 import Activity from '../components/Activity';
 
@@ -42,6 +43,7 @@ class BadgeScreen extends Component {
         />
         <Toast 
           ref="toast"
+          style={{ backgroundColor: secondaryColor }}
         />
       </View>
     )

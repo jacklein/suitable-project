@@ -4,7 +4,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "node_modules/.bin/jest"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -21,7 +22,10 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "^5.0.0",
+    "jest-expo": "^32.0.0",
+    "prop-types": "^15.6.2",
+    "react-test-renderer": "^16.7.0"
   },
   "private": true
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, StyleSheet } from 'react-native'
 import { Card, Button } from 'react-native-elements';
 import { primaryColor } from '../styles/common';
@@ -26,9 +27,7 @@ const Activity = ({ activity, onPress }) => {
 
 const styles = StyleSheet.create({
   card: {
-    borderWidth: 0,
-    marginTop: 0, 
-    marginBottom: 10
+    borderWidth: 0
   },
   title: {
     textAlign: 'center',
@@ -43,5 +42,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   }
 });
+
+Activity.propTypes = {
+  activity: PropTypes.object,
+  onPress: PropTypes.func
+}
+
 
 export default Activity;

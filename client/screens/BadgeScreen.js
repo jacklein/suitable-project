@@ -13,10 +13,16 @@ class BadgeScreen extends Component {
       headerTitle: navigation.state.params.title,
       headerStyle: {
         marginTop: Platform.OS === 'android' ? 24 : 0
-      },
+      }
     }
   }
 
+  /**
+   * this.props.updateProgress takes two parameters:
+   * 1. the ID of the completed activity
+   * 2. the callback function to be called after the action
+   *    successfully dispatches to the Badges reducer
+   */
   onPress = activity => {
     this.props.updateProgress(activity.id, () => {
       this.refs.toast.show(activity.details.title + ' Complete!');
@@ -33,9 +39,9 @@ class BadgeScreen extends Component {
   }
 
   render() {
-    const activities = this.props.navigation.state.params.badge.relationships.recommendations;
+    const { activities } = this.props.navigation.state.params;
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <FlatList
           data={activities}
           keyExtractor={item => item.id}

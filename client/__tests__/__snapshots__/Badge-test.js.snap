@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "white",
+          "borderColor": "#e1e8ee",
+          "borderWidth": 1,
+          "margin": 15,
+          "marginBottom": 0,
+          "padding": 15,
+          "shadowColor": "rgba(0,0,0, .2)",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 1,
+        },
+        undefined,
+        Object {
+          "borderWidth": 0,
+          "marginBottom": 10,
+          "marginTop": 0,
+          "width": 750,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+          undefined,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "https://www.filepicker.io/api/file/h6spFMWTQaKXzk6HOxqL",
+            }
+          }
+          style={
+            Object {
+              "height": 100,
+              "left": -15,
+              "resizeMode": "contain",
+              "width": 100,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "marginTop": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontWeight": "bold",
+                "marginBottom": 10,
+              }
+            }
+          >
+            Exceptional Achievement
+          </Text>
+          <View
+            animated={true}
+            animationConfig={
+              Object {
+                "bounciness": 0,
+              }
+            }
+            animationType="spring"
+            indeterminate={false}
+            onLayout={[Function]}
+            progress={0.29699748744715526}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": undefined,
+                  "borderColor": "#4492E5",
+                  "borderRadius": 4,
+                  "borderWidth": 1,
+                  "overflow": "hidden",
+                  "width": 150,
+                },
+                undefined,
+              ]
+            }
+            useNativeDriver={false}
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#4492E5",
+                  "height": 15,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                    Object {
+                      "translateX": -52.02218592891051,
+                    },
+                    Object {
+                      "scaleX": 0.2970677876984105,
+                    },
+                  ],
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <Text
+        style={
+          Object {
+            "marginBottom": 20,
+            "marginTop": 15,
+          }
+        }
+      >
+        Sit nisi eveniet non expedita eos. Porro et odit vel quis voluptatem error. Et est autem nostrum quis voluptatem voluptas voluptatibus sint. Occaecati nesciunt provident dolorem tenetur rerum officiis.
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "marginLeft": 15,
+              "marginRight": 15,
+            },
+            undefined,
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={null}
+        >
+          <View
+            pointerEvents="box-only"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#9E9E9E",
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "padding": 19,
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                Object {
+                  "backgroundColor": "#4492E5",
+                },
+                undefined,
+                Object {
+                  "padding": 12,
+                },
+                undefined,
+                undefined,
+                undefined,
+                Object {
+                  "alignSelf": "center",
+                  "borderRadius": 0,
+                },
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {},
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  Array [
+                    Object {
+                      "color": "white",
+                      "fontSize": 20,
+                    },
+                    undefined,
+                    Object {
+                      "fontSize": 17.5,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              View Tasks
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

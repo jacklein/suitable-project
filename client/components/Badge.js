@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native'
 import { Card, Button } from 'react-native-elements';
 import { Bar } from 'react-native-progress';
@@ -11,7 +12,7 @@ class Badge extends React.PureComponent {
     const { details } = this.props.badge;
     return (
       <View style={styles.container}>
-        <Card containerStyle={styles.card} >
+        <Card containerStyle={styles.card}>
           <View style={{ flexDirection: 'row' }}>
             <Image
               style={styles.image}
@@ -72,5 +73,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   }
 });
+
+Badge.propTypes = {
+  badge: PropTypes.object,
+  onPress: PropTypes.func
+}
 
 export default Badge;

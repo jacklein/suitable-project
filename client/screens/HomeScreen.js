@@ -13,6 +13,7 @@ class HomeScreen extends Component {
       headerStyle: {
         marginTop: Platform.OS === 'android' ? 24 : 0
       },
+      headerBackTitle: 'Back'
     }
   }
 
@@ -31,6 +32,7 @@ class HomeScreen extends Component {
       routeName: 'badge',
       params: {
         badge,
+        activities: badge.relationships.recommendations,
         title: this.shortenName(badge)
       }
     });
@@ -47,11 +49,13 @@ class HomeScreen extends Component {
 
   render() {
     return (
-      <FlatList
-        data={this.props.badges}  
-        keyExtractor={badge => badge.id}
-        renderItem={this.renderBadge}
-      />
+      <View style={{ flex: 1 }}>
+        <FlatList
+          data={this.props.badges}  
+          keyExtractor={badge => badge.id}
+          renderItem={this.renderBadge}
+        />
+      </View>
     );
   }
 }

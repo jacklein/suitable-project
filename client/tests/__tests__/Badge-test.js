@@ -1,5 +1,5 @@
 import React from 'react';
-import Badge from '../components/Badge';
+import Badge from '../../components/Badge';
 import { achievements } from '../mockdata';
 
 import renderer from 'react-test-renderer';

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, FlatList, Platform } from 'react-native';
+import { View, FlatList, Platform } from 'react-native';
 import { connect } from 'react-redux';
-import { Button } from 'react-native-elements';
-import { fetchBadges } from '../actions';
+import { fetchBadges, setIndex } from '../actions';
 
 import Badge from '../components/Badge';
 
@@ -27,22 +26,24 @@ class HomeScreen extends Component {
     return title.substring(0, lastIndex);
   }
 
-  onPress = badge => {
+  onPress = (badge, index) => {
+    // set current badge index to the currently viewed badge
+    this.props.setIndex(index);
+
     this.props.navigation.navigate({
       routeName: 'badge',
       params: {
-        badge,
-        activities: badge.relationships.recommendations,
         title: this.shortenName(badge)
       }
     });
   }
 
-  renderBadge = ({ item }) => {
+  renderBadge = ({ item, index }) => {
     return (
       <Badge 
         badge={item} 
         onPress={this.onPress} 
+        index={index}
       />
     )
   }
@@ -64,4 +65,4 @@ function mapStateToProps({ badges }) {
   return { badges };
 }
 
-export default connect(mapStateToProps, { fetchBadges })(HomeScreen);
+export default connect(mapStateToProps, { fetchBadges, setIndex })(HomeScreen);

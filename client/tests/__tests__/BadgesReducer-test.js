@@ -1,5 +1,5 @@
-import reducer from '../reducers/badgesReducer';
-import * as types from '../actions/types';
+import reducer from '../../reducers/badgesReducer';
+import * as types from '../../actions/types';
 import { achievements, updates, updatedAchievements } from '../mockdata';
 
 describe('Badges reducer', () => {

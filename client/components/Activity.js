@@ -18,7 +18,7 @@ const Activity = ({ activity, onPress }) => {
         icon={{ name:'check', color:'#ffffff' }}
         backgroundColor={primaryColor}
         buttonStyle={styles.button}
-        title='Mark Complete'
+        title='Mark Activity Complete'
         onPress={() => onPress(activity)}
       />
     </Card>

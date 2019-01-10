@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentBadgeActions creates a SET_INDEX action 1`] = `
+Object {
+  "payload": 1,
+  "type": "set_index",
+}
+`;
+
+exports[`creates a SET_INDEX action 1`] = `
+Object {
+  "payload": 1,
+  "type": "set_index",
+}
+`;

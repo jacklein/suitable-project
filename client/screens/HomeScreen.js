@@ -6,7 +6,7 @@ import { fetchBadges, setIndex } from '../actions';
 import Badge from '../components/Badge';
 
 class HomeScreen extends Component {
-  static navigationOptions = ({ navigation }) => {
+  static navigationOptions = () => {
     return {
       headerTitle: 'Badges',
       headerStyle: {
@@ -27,7 +27,8 @@ class HomeScreen extends Component {
   }
 
   onPress = (badge, index) => {
-    // set current badge index to the currently viewed badge
+    // set current badge index to the index of the 
+    // badge that has just been clicked
     this.props.setIndex(index);
 
     this.props.navigation.navigate({

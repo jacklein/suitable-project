@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   card: {
     borderWidth: 0,
     marginTop: 10,
-    marginBottom: 1 // small hack, scrollview cuts off bottom component w/o this
+    marginBottom: 1
   },
   title: {
     fontWeight: 'bold', 

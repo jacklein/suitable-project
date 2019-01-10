@@ -6,6 +6,7 @@ import { Bar } from 'react-native-progress';
 import { progressBar, primaryColor } from '../styles/common';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class Badge extends React.PureComponent {
   renderHeader = () => {
@@ -81,8 +82,8 @@ const styles = StyleSheet.create({
   image: {
     left: -15,
     resizeMode: 'contain',
-    width: 100,
-    height: 100
+    width: SCREEN_HEIGHT / 5.5,
+    height: SCREEN_HEIGHT / 5.5
   },
   title: {
     marginBottom: 10,
@@ -101,7 +102,8 @@ const styles = StyleSheet.create({
 
 Badge.propTypes = {
   badge: PropTypes.object,
-  onPress: PropTypes.func
+  onPress: PropTypes.func,
+  index: PropTypes.number
 }
 
 export default Badge;

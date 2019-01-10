@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Activity component renders correctly 1`] = `
+<Card
+  containerStyle={
+    Object {
+      "borderWidth": 0,
+      "marginBottom": 1,
+      "marginTop": 10,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "fontWeight": "bold",
+        "marginBottom": 10,
+      }
+    }
+  >
+    Bacon 21151
+  </Component>
+  <Component
+    style={
+      Object {
+        "marginBottom": 15,
+      }
+    }
+  >
+    Fuga id aspernatur sed pariatur itaque placeat. Velit unde aut explicabo. Pariatur fuga eveniet ipsa. Aut amet repudiandae laboriosam doloremque sit. Ut quam molestiae ab occaecati illo sed unde. Harum minus est libero eaque cum.
+  </Component>
+  <Button
+    backgroundColor="#4492E5"
+    buttonStyle={
+      Object {
+        "borderRadius": 0,
+        "marginBottom": 15,
+      }
+    }
+    icon={
+      Object {
+        "color": "#ffffff",
+        "name": "check",
+      }
+    }
+    onPress={[Function]}
+    title="Mark Activity Complete"
+  />
+</Card>
+`;

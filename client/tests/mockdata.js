@@ -56,12 +56,15 @@ export const achievements =
 ];
 
 export const updates =
-[
-  {
-    "achievementId": "1924883835",
-    "progress": 0.6656102509337432
-  }
-];
+{
+  'id': '123',
+  'updates': [
+      {
+        "achievementId": "1924883835",
+        "progress": 0.6656102509337432
+      }
+    ]
+};
 
 export const updatedAchievements = 
 [

@@ -3,11 +3,13 @@ import {
   UPDATE_PROGRESS
 } from './types';
 import axios from 'axios';
-
-const URI = 'http://192.168.1.137:3001'
+import keys from '../config/keys';
 
 /**
- * res.data structure:
+ * Retrieves all the badges from the API
+ * 
+ * API sends back data in the variable 'res.data'
+ * Example res.data structure:
  * [
  *  { 'id': 123, 'details': {...}, 'relationships': {...} },
  *  { 'id': 456, 'details': {...}, 'relationships': {...} } 
@@ -15,7 +17,7 @@ const URI = 'http://192.168.1.137:3001'
  */
 export const fetchBadges = () => async dispatch => {
   try{
-    const res = await axios.get(`${URI}/v1/achievements`);
+    const res = await axios.get(`${keys.URI}/v1/achievements`);
     dispatch({ type: FETCH_BADGES, payload: res.data });
   } catch(e) {
     console.log(e);
@@ -23,7 +25,11 @@ export const fetchBadges = () => async dispatch => {
 }
 
 /**
- * res.data structure:
+ * Updates the progress of necessary badges 
+ * after an activity is marked complete
+ * 
+ * API sends back data in the variable 'res.data'
+ * Example res.data structure:
  * {
  *  'id': (id of completed activity),
  *  'updates': [{'achievementID': 456, 'progress': 0.5}, {...}, {...}]
@@ -31,7 +37,7 @@ export const fetchBadges = () => async dispatch => {
  */
 export const updateProgress = (id, callback) => async dispatch => {
   try {
-    const res = await axios.get(`${URI}/v1/activities/${id}/complete`);
+    const res = await axios.get(`${keys.URI}/v1/activities/${id}/complete`);
     dispatch({ type: UPDATE_PROGRESS, payload: res.data.updates });
     callback();
   } catch(e) {

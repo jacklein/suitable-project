@@ -27,19 +27,20 @@ const Activity = ({ activity, onPress }) => {
 
 const styles = StyleSheet.create({
   card: {
-    borderWidth: 0
+    borderWidth: 0,
+    marginTop: 10,
+    marginBottom: 1 // small hack, scrollview cuts off bottom component w/o this
   },
   title: {
-    textAlign: 'center',
     fontWeight: 'bold', 
-    marginBottom: 15
+    marginBottom: 10
   },
   description: {
-    marginBottom: 20
+    marginBottom: 15
   },
   button: {
     borderRadius: 0,
-    alignSelf: 'center'
+    marginBottom: 15,
   }
 });
 

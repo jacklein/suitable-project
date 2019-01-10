@@ -11,7 +11,7 @@ class Badge extends React.PureComponent {
   renderHeader = () => {
     const { details } = this.props.badge;
     return (
-      <View style={{ flexDirection: 'row' }}>
+      <View style={styles.header}>
         <Image
           style={styles.image}
           source={{ uri: details.iconUrl }}
@@ -44,7 +44,7 @@ class Badge extends React.PureComponent {
       <Button
         backgroundColor={primaryColor}
         buttonStyle={styles.button}
-        title='View Tasks'
+        title='View Activities'
         onPress={() => this.props.onPress(this.props.badge, this.props.index)}
       />
     );
@@ -68,10 +68,15 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   card: {
-    borderWidth: 0,
     width: SCREEN_WIDTH, 
+    borderWidth: 0,
     marginTop: 0, 
-    marginBottom: 10
+    marginBottom: 10,
+    paddingTop: 0
+  },
+  header: {
+    flexDirection: 'row',
+    top: 5
   },
   image: {
     left: -15,
@@ -84,11 +89,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   description: {
-    marginBottom: 20, 
-    marginTop: 15
+    marginTop: 10,
+    marginBottom: 15
   },
   button: {
     borderRadius: 0,
+    marginBottom: 15,
     alignSelf: 'center'
   }
 });

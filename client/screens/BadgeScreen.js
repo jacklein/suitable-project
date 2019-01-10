@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, Platform, FlatList, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
+import { View, Platform, FlatList, ScrollView, StyleSheet } from 'react-native';
 import { updateProgress } from '../actions';
-import { Bar } from 'react-native-progress';
+import { secondaryColor } from '../styles/common';
 import Toast from 'react-native-easy-toast';
-import { progressBar, secondaryColor } from '../styles/common';
 
 import Activity from '../components/Activity';
+import BadgeProgress from '../components/BadgeProgress';
 
 class BadgeScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -39,31 +39,14 @@ class BadgeScreen extends Component {
     )
   }
 
-  calculatePercent = decimal => {
-    return (100 * parseFloat(decimal)).toFixed(2);
-  }
-
-  renderBadgeProgress = badge => {
-    return (
-      <View style={{ flex: 1, alignItems: 'center' }}>
-        <Text style={{ fontSize: 16, marginVertical: 10 }}>Badge Progress: {this.calculatePercent(badge.details.progress)}%</Text>
-        <Bar 
-          progress={badge.details.progress}
-          color={progressBar.color}
-          height={progressBar.height}
-        />
-      </View>
-    )
-  }
-
   render() {
     const badge = this.props.badges[this.props.currentBadge];
     const activities = badge.relationships.recommendations;
     
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.container}>
         <ScrollView>
-          {this.renderBadgeProgress(badge)}
+          <BadgeProgress badge={badge} />
           <FlatList
             data={activities}
             keyExtractor={item => item.id}
@@ -82,5 +65,12 @@ class BadgeScreen extends Component {
 function mapStateToProps({ badges, currentBadge }) {
   return { badges, currentBadge };
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginBottom: 10
+  }
+});
 
 export default connect(mapStateToProps, { updateProgress })(BadgeScreen);

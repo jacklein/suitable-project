@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, FlatList, Platform } from 'react-native';
 import { connect } from 'react-redux';
+import { View, FlatList, Platform } from 'react-native';
 import { fetchBadges, setIndex } from '../actions';
 
 import Badge from '../components/Badge';

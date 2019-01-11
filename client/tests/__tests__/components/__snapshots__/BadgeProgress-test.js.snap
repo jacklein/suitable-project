@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BadgeProgress component renders correctly 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "marginBottom": 15,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "fontSize": 16,
+        "marginVertical": 10,
+      }
+    }
+  >
+    Badge Progress: 
+    29.70
+    %
+  </Component>
+  <ProgressBar
+    animated={true}
+    animationConfig={
+      Object {
+        "bounciness": 0,
+      }
+    }
+    animationType="spring"
+    borderRadius={4}
+    borderWidth={1}
+    color="#4492E5"
+    height={15}
+    indeterminate={false}
+    progress={0.29699748744715526}
+    useNativeDriver={false}
+    width={150}
+  />
+</Component>
+`;
+
+exports[`BadgeProgress component renders correctly 2`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "marginBottom": 15,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "fontSize": 16,
+        "marginVertical": 10,
+      }
+    }
+  >
+    Badge Progress: 
+    99.00
+    %
+  </Component>
+  <ProgressBar
+    animated={true}
+    animationConfig={
+      Object {
+        "bounciness": 0,
+      }
+    }
+    animationType="spring"
+    borderRadius={4}
+    borderWidth={1}
+    color="#4492E5"
+    height={15}
+    indeterminate={false}
+    progress={0.99}
+    useNativeDriver={false}
+    width={150}
+  />
+</Component>
+`;

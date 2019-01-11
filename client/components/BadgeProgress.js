@@ -4,6 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Bar } from 'react-native-progress';
 import { progressBar } from '../styles/common';
 
+// ex: 0.12345678 = 12.34
 const calculatePercent = decimal => {
   return (100 * parseFloat(decimal)).toFixed(2);
 }
@@ -38,6 +39,5 @@ const styles = StyleSheet.create({
 BadgeProgress.propTypes = {
   progress: PropTypes.number,
 }
-
 
 export default BadgeProgress

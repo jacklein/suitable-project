@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Platform, FlatList, ScrollView, StyleSheet } from 'react-native';
+import { View, Platform, FlatList, ScrollView } from 'react-native';
 import { updateProgress } from '../actions';
 import { secondaryColor } from '../styles/common';
 import Toast from 'react-native-easy-toast';
@@ -44,9 +44,9 @@ class BadgeScreen extends Component {
     const activities = badge.relationships.recommendations;
     
     return (
-      <View style={styles.container}>
+      <View>
         <ScrollView>
-          <BadgeProgress badge={badge} />
+          <BadgeProgress progress={badge.details.progress} />
           <FlatList
             data={activities}
             keyExtractor={item => item.id}
@@ -65,12 +65,5 @@ class BadgeScreen extends Component {
 function mapStateToProps({ badges, currentBadge }) {
   return { badges, currentBadge };
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginBottom: 10
-  }
-});
 
 export default connect(mapStateToProps, { updateProgress })(BadgeScreen);

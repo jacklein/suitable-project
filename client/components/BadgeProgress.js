@@ -8,14 +8,14 @@ const calculatePercent = decimal => {
   return (100 * parseFloat(decimal)).toFixed(2);
 }
 
-const BadgeProgress = ({ badge }) => {
+const BadgeProgress = ({ progress }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
-        Badge Progress: {calculatePercent(badge.details.progress)}%
+        Badge Progress: {calculatePercent(progress)}%
       </Text>
       <Bar 
-        progress={badge.details.progress}
+        progress={progress}
         color={progressBar.color}
         height={progressBar.height}
       />
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 });
 
 BadgeProgress.propTypes = {
-  badge: PropTypes.object,
+  progress: PropTypes.number,
 }
 
 

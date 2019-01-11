@@ -11,7 +11,13 @@ export default function(state = [], action) {
       return state.map(badge => {
         const updatedBadge = action.payload.find(el => el.achievementId === badge.id);
         if (updatedBadge) {
-          return {...badge, details: { ...badge.details, progress: updatedBadge.progress }};
+          return {
+            ...badge, 
+            details: { 
+              ...badge.details, 
+              progress: updatedBadge.progress 
+            }
+          };
         } else {
           return badge;
         }

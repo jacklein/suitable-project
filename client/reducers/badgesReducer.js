@@ -9,6 +9,7 @@ export default function(state = [], action) {
       return action.payload
     case UPDATE_PROGRESS:
       return state.map(badge => {
+        // checks to see if badge has been updated
         const updatedBadge = action.payload.find(el => el.achievementId === badge.id);
         if (updatedBadge) {
           return {

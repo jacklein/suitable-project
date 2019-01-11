@@ -9,10 +9,11 @@ From within the current directory:
 ### Running the Project
 1. Make sure the server is running and that your simulator is open
     1. The server is by default running on http://localhost:3001, but if you decide to change this then you must also tell the client what the correct API uri is inside of the `client/config/keys.js` file
-2. Run `expo start`
+2. From within the current directory, run `expo start`
 3. Once the project has successfully loaded in the Expo Dev Tools that pops up in your web browser, select from the left hand menu to run the project on your iOS/ Android simulator. 
 
 ### Testing the Project
+From within the current directory:
 1. Run `npm test` 
    
 You will notice that one test fails (Badge-test) and this is because of some problem the jest preprocessor has with class arrow methods, as documented [Here](https://github.com/facebook/react-native/issues/22175#issuecomment-439988478). To fix this problem, you have to go into `client/node_modules/react-native/jest/preprocessor.js` and change line 56 to `inlineRequires: false` 

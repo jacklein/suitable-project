@@ -12,7 +12,7 @@ From within the current directory:
 1. Once the project has successfully loaded in the Expo Dev Tools that pops up in your web browser, select from the left hand menu to run on your iOS/ Android simulator. 
 
 ### Testing the Project
-1. Run `npm test`
+1. Run `npm test`  
 You will notice that one test fails (Badge-test), and this is because of some problem the jest preprocessor has with class arrow methods (as documented at https://github.com/facebook/react-native/issues/22175#issuecomment-439988478). To fix this problem, you have to go into node_modules/react-native/jest/preprocessor.js and change line 56 to `inlineRequires: false` 
 
 ### Considerations

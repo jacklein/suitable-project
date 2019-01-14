@@ -4,7 +4,7 @@ This repo explains how to setup, run, and test this React Native application bui
 ### Setting up the Project
 From within the current directory: 
 1. Run `npm install`
-2. Run `npm install -g expo-cli` (This downloads the necessary Expo CLI and develper tools UI).
+2. Run `npm install -g expo-cli` (This downloads the necessary Expo CLI and developer tools UI).
 
 ### Running the Project
 1. Make sure the server is running and that your simulator is open

@@ -8,7 +8,7 @@ From within the current directory:
 
 ### Running the Project
 1. Make sure the server is running and that your simulator is open
-    1. The server is by default running on http://localhost:3001, but if you decide to change this then you must also tell the client what the correct API uri is inside of the `client/config/keys.js` file
+    1. The server is by default running on http://localhost:3001. If you decide to change this, you must also tell the client what the correct API uri is in the `client/config/keys.js` file
 2. From within the current directory, run `expo start`
 3. Once the project has successfully loaded in the Expo Dev Tools that pops up in your web browser, select from the left hand menu to run the project on your iOS/ Android simulator. 
 
